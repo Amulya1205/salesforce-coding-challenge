@@ -1,3 +1,28 @@
+
+
+# Assumptions
+
+1. Remote site settings is configured with the endpoint url to authorize the callout.
+2. Error messages would be returned from the invocable class and would be utilized by admins through flow.
+
+# solution
+1. A basic record triggered flow 'Callout_to_NPS' is confgured to call the apex class 'NPS Integration'.
+2. Invocable class NPS integration is configured to make a callout to NPS returning errors as List of strings.
+3. Named credentials are configured to store user name and password for the site.
+
+
+# Limitations:
+1. Maximum number of http callouts allowed per transcation is 100.
+
+
+# TO-D0
+1. The created named credentials can be added to the code by querying them adding the named credential fields instead of user name and password.
+2. In order to prevent multiple emails sent whenever the order status is changed to fulfilment, a field is to be created on order after the first email is sent to the contact.
+3. Error handling can be made better by utilizing the error messages received from the class and display it accordingly through screen flow.
+
+
+
+----------------------------------------------------------------------------------------------------------
 # Salesforce Senior Coding Challenge
 
 We appreciate you taking the time to participate and submit a coding challenge! 🥳
